@@ -8,7 +8,7 @@ import pymysql
 def make_url(catid, page):
     part1 = "https://s.2.taobao.com/list/?search_type=item&_input_charset=utf8&"
     part2 = "catid=" + str(catid)
-    part3 = "&wp=" + str(page)
+    part3 = "&page=" + str(page)
     return part1 + part2 + part3
 
 
@@ -36,7 +36,7 @@ def get_catid(id):
 
 
 def get_items_by_category(cateid, number):
-    for x in range(1, 2 * number, 2):
+    for x in range(1, number+1):
         print("第", x, "页开始-------++++++++++++++++++++++++++++++++++++----------  ")
         time.sleep(3)
         url = make_url(get_catid(cateid), x)
@@ -57,7 +57,7 @@ def get_items_by_category(cateid, number):
             try:
                 user_level = div.find_all('span')[1]['title']
             except:
-                user_level = "unkown"
+                user_level = "none"
             item_info = div.find_all('a')[2]
             item_url = item_info['href'][2:]
             item_title = item_info['title']
