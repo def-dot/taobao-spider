@@ -74,10 +74,10 @@ def get_items_by_category(cateid, number):
 
             # 插入 item 数据库
             sql = "INSERT INTO tb_taobao2_items_info (username, userpage_url, user_avatar, user_level, item_url," \
-                  "item_title, item_image, item_price, item_location, item_desc, ctime, mtime) " \
-                  "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')"\
+                  "item_title, item_image, item_price, item_location, item_desc, category_id, ctime, mtime) " \
+                  "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')"\
                 .format(username, userpage_url, user_avatar, user_level, item_url, item_title, item_image, item_price,
-                        item_location, item_desc, ctime, mtime)
+                        item_location, item_desc, cateid, ctime, mtime)
             try:
                 # 执行sql语句
                 cursor.execute(sql)
