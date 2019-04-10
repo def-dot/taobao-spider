@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 08/04/2019 15:00:40
+ Date: 10/04/2019 16:48:07
 */
 
 SET NAMES utf8mb4;
@@ -33,10 +33,11 @@ CREATE TABLE `tb_taobao2_items_info` (
   `item_price` float(10,2) NOT NULL COMMENT '商品价格',
   `item_location` varchar(10) NOT NULL COMMENT '所在地',
   `item_desc` varchar(255) NOT NULL COMMENT '商品描述',
+  `category_id` int(8) NOT NULL COMMENT '类别 主键id',
   `ctime` int(10) NOT NULL COMMENT '创建记录时间',
   `mtime` int(10) NOT NULL COMMENT '修改记录时间',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '记录状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=38575 DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;
