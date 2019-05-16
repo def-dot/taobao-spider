@@ -12,4 +12,4 @@ v2.0 利用 web 端搜索接口，利用 bs4 纯界面解析来爬商品内容
 v3.0 更新翻页 url 参数，page=? 去除重复爬取数据，基本完成
 
 
-spider.py 为jsop 爬取，速度慢而且接口被封，items.py 界面爬取，速度快
+spider.py 为jsonp 爬取，速度慢而且接口被封，items.py 界面爬取，速度快
