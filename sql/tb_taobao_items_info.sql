@@ -18,15 +18,16 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for tb_taobao2_items_info
+-- Table structure for tb_taobao_items_info
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_taobao2_items_info`;
-CREATE TABLE `tb_taobao2_items_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品主键 id',
+DROP TABLE IF EXISTS `tb_taobao_items_info`;
+CREATE TABLE `tb_taobao_items_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键 id',
   `username` varchar(255) NOT NULL COMMENT '出售人 name',
   `userpage_url` varchar(255) NOT NULL COMMENT '出售人详情页',
   `user_avatar` varchar(255) NOT NULL COMMENT '出售人头像 url',
   `user_level` varchar(4) NOT NULL COMMENT 'vip 等级',
+  `item_id` int(11) NOT NULL COMMENT '商品主键 id',
   `item_url` varchar(255) NOT NULL COMMENT '商品链接',
   `item_title` varchar(255) NOT NULL COMMENT '商品标题',
   `item_image` varchar(255) NOT NULL COMMENT '商品图片',

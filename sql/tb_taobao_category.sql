@@ -11,22 +11,21 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 08/04/2019 15:00:24
+ Date: 08/04/2019 15:00:17
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for tb_taobao2_img
+-- Table structure for tb_taobao_category
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_taobao2_img`;
-CREATE TABLE `tb_taobao2_img` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '图片 id',
-  `img_url` varchar(255) NOT NULL COMMENT '图片 url',
-  `ctime` int(10) NOT NULL COMMENT '创建时间',
-  `mtime` int(10) NOT NULL COMMENT '修改时间',
+DROP TABLE IF EXISTS `tb_taobao_category`;
+CREATE TABLE `tb_taobao_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品种类主键',
+  `category` varchar(255) NOT NULL COMMENT '商品种类名称',
+  `code` varchar(8) NOT NULL COMMENT '商品种类代码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;

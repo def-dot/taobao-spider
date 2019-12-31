@@ -11,13 +11,13 @@ def get_page(url):
 
 
 if __name__ == '__main__':
-    taobao2 = "https://2.taobao.com/list/"
-    html = get_page(taobao2)
+    taobao = "https://2.taobao.com/list/"
+    html = get_page(taobao)
     soup = BeautifulSoup(html)
     links = soup.find_all(attrs={"href": re.compile('^//s[.]2[.]taobao[.]com/list/list[.]htm')}, limit=59)
 
     # 打开数据库连接
-    db = pymysql.connect("localhost", "root", "root", "taobao2")
+    db = pymysql.connect("localhost", "root", "", "taobao")
 
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         # SQL 插入语句
         # sql = "INSERT INTO t_category (category, code) VALUES (%s, %s)"
         # parm = (category, code)
-        sql = "INSERT INTO t_category (category, code) VALUES ('{}', '{}')" .format(category, code)
+        sql = "INSERT INTO tb_taobao_category (category, code) VALUES ('{}', '{}')" .format(category, code)
         try:
             # 执行sql语句
             cursor.execute(sql)
